@@ -8,7 +8,7 @@ import { HERO_SLIDER } from "../constant/hero-slider";
 import Link from "next/link";
 
 interface SliderProps {
-  isOpen?: boolean;
+  /* isOpen?: boolean; */
   headerHeight?: number;
 }
 
@@ -18,7 +18,7 @@ interface SliderState {
   sectionHeight: number;
 }
 
-function Slider({ isOpen }: SliderProps) {
+function Slider() {
   const [counter, setCounter] = useState(0);
   const [state, setState] = useState<SliderState | null>(null);
   const touchStart = useRef<number | null>(null);

@@ -9,6 +9,7 @@
   /* Font */
   --font-great-vibes: "Great Vibes", cursive; /* Nota: Great Vibes è un font script, non Poppins */
   --font-roboto: "Roboto", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 
   /* Colori: Questo permetterà di usare bg-primary, text-secondary, ecc. */
   --color-primary: #6d4c41;
@@ -38,6 +39,7 @@
 
   /* Usiamo Roboto per il corpo del testo e descrizioni */
   --font-body: var(--font-roboto);
+  --font-poppins: var(--font-poppins);
 
   /* Font Pesi */
   --fw-light: 300;
@@ -206,8 +208,28 @@ textarea:focus {
   font-weight: 500;
 }
 
+.container-box h2 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5rem;
+  font-size: 1rem;
+  text-shadow: 0.5px 0.5px 1px var(--primary);
+}
+
+.container-box h3 {
+  font-family: var(--font-poppins), sans-serif;
+  letter-spacing: normal;
+  font-size: 2rem;
+  text-shadow: 0.5px 0.5px 1px var(--primary);
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .hero h2 {
     font-size: 4.5rem;
+  }
+
+  .container-box h3 {
+    font-size: 4rem;
   }
 }
