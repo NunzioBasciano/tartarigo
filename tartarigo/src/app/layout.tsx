@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "./_components/Header";
+import { Poppins, Roboto } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["300", "400", "600", "700"], // Pesi ideali per titoli e CTA
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
+  weight: ["300", "400", "500"], // Ottimo per il corpo del testo
 });
-
-// 1. I METADATI (Esportati correttamente)
+// 1. I METADATI
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tuobnb.it"),
   title: {
@@ -58,7 +61,7 @@ export const metadata: Metadata = {
   },
 };
 
-// 2. IL COMPONENTE JSON-LD (Rimosso 'export default')
+// 2. IL COMPONENTE JSON-LD (Funzione interna, non esportata come default)
 function StructuredData() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -104,7 +107,7 @@ function StructuredData() {
   );
 }
 
-// 3. IL LAYOUT (L'unico export default)
+// 3. IL LAYOUT (L'UNICO EXPORT DEFAULT)
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -112,10 +115,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <StructuredData /> {/* Inserito qui per caricarlo in tutte le pagine */}
+      <body className={`${poppins.variable} ${roboto.variable} antialiased`}>
+        <Header></Header>
+        <StructuredData />
         {children}
       </body>
     </html>

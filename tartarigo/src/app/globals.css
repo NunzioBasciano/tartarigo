@@ -1,26 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Passions+Conflict&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @import "tailwindcss";
 
+@theme {
+  /* Font */
+  --font-great-vibes: "Great Vibes", cursive; /* Nota: Great Vibes è un font script, non Poppins */
+  --font-roboto: "Roboto", sans-serif;
+
+  /* Colori: Questo permetterà di usare bg-primary, text-secondary, ecc. */
+  --color-primary: #6d4c41;
+  --color-secondary: #fff3dd;
+  --color-accent: #f5cb9e;
+  --color-cta: #e67e22;
+}
+/* -------------------------------------------------------------------------- */
+/* 1. DESIGN TOKENS & VARIABLES                                               */
+/* -------------------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #6d4c41;
+  --secondary: #fff3dd;
+  --accent: #f5cb9e;
+  --cta: #e67e22;
+  --bg-light: #fdfcfb;
+  --text-main: #4a4a4a;
+  --border: #e2e8f0;
+
+  /* Spaziature (Sistema a base 8) */
+  --space-unit: 0.5rem;
+  --section-padding: 6rem; /* 96px */
+
+  /* Font Families */
+  /* Usiamo Poppins per Titoli e Elementi di Spicco */
+  --font-heading: var(--font-great-vibes);
+
+  /* Usiamo Roboto per il corpo del testo e descrizioni */
+  --font-body: var(--font-roboto);
+
+  /* Font Pesi */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* -------------------------------------------------------------------------- */
+/* 2. RESET & BASE STYLES                                                     */
+/* -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. TIPOGRAFIA (Gerarchia Professionale)                                    */
+/* -------------------------------------------------------------------------- */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), sans-serif;
+
+  line-height: 1.2;
+  margin-bottom: calc(var(--space-unit) * 2);
+  text-wrap: balance;
+}
+
+/* Titoli delle Sezioni (es. "Le Nostre Camere" [cite: 8]) */
+h2 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+/* Titoli delle Camere (es. "Lettu Ring" [cite: 18]) */
+h3 {
+  font-size: 1.5rem;
+  font-weight: var(--fw-semibold);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. LAYOUT COMPONENTS                                                       */
+/* -------------------------------------------------------------------------- */
+.container-custom {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 1.5rem; /* 24px */
+}
+
+section {
+  padding: var(--section-padding) 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. UI ELEMENTS (Bottoni e Card)                                            */
+/* -------------------------------------------------------------------------- */
+
+/* Pulsante Primario: "Prenota Subito" [cite: 44, 57] */
+.btn-cta {
+  /* Usiamo l'accento per dare importanza senza urlare */
+  background-color: var(--accent);
+  color: var(--primary);
+
+  /* Riduciamo leggermente il padding per l'header */
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.125rem; /* 2px */
+  font-size: 0.875rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-cta:hover {
+  background-color: var(--secondary);
+  transform: translateY(-0.0625rem);
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
+}
+
+/* Pulsante Secondario: "Dettagli e Prezzi" [cite: 25] */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 0.0625rem solid var(--primary); /* 1px */
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  font-size: 0.875rem; /* 14px */
+  font-weight: var(--fw-semibold);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Card Camere: Gestione 40mq/45mq [cite: 17, 22] */
+.room-card {
+  background: white;
+  border-radius: 0.5rem; /* 8px */
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.05); /* 2px 10px */
+  border: 0.0625rem solid var(--border);
+}
+
+.room-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 6. FORM & CONTACTS (Sezione "Contatti e Richieste" [cite: 58])             */
+/* -------------------------------------------------------------------------- */
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem; /* 12px */
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.25rem; /* 4px */
+  margin-bottom: calc(var(--space-unit) * 2);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  ring: 2px rgba(212, 175, 55, 0.2);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. UTILITIES                                                               */
+/* -------------------------------------------------------------------------- */
+.text-accent {
+  color: var(--accent);
+}
+.bg-primary {
+  background-color: var(--primary);
+}
+.mb-8 {
+  margin-bottom: calc(var(--space-unit) * 8);
+}
+/* Sotto la sezione Tipografia */
+.brand-highlight {
+  color: var(--accent); /* Il tuo #f5cb9e */
+  font-style: normal; /* Opzionale: se vuoi che l'iniziale sia dritta mentre il resto è oblique */
+}
+#brand h1 {
+  margin-bottom: 0;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  text-shadow: 1px 3px 10px var(--primary);
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .hero h2 {
+    font-size: 4.5rem;
+  }
 }
