@@ -37,7 +37,7 @@ export default function Home() {
                       </div>
                     ))}
                 </div>
-                http://localhost:3000/_next/image?url=%2Fhorizontal%2Fcamera-1.jpeg&w=1920&q=75{" "}
+
                 {/* Sezione Servizi - Griglia 2 colonne */}
                 <div className="mx-4 mt-4 grid grid-cols-2 gap-y-4 gap-x-2">
                   {room.services.map((service, sIndex) => (
