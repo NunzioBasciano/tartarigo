@@ -11,6 +11,7 @@ interface NavigationItemProps {
 function NavigationItem({ href, label, color, onclick }: NavigationItemProps) {
   return (
     <Link
+      target="_self"
       onClick={onclick}
       href={href}
       className={`nav-link inline-block font-medium uppercase tracking-[0.15em] ${

@@ -4,6 +4,7 @@ export const ROOMS = [
     images: [
       { src: "/horizontal/camera-1.jpeg", alt: "" },
       { src: "/horizontal/camera-1-2.jpeg", alt: "" },
+      { src: "/horizontal/camera-1-2.jpeg", alt: "" },
     ],
     services: [
       { icon: "", label: "45 mq" },
@@ -19,6 +20,7 @@ export const ROOMS = [
     name: "Camera 2",
     images: [
       { src: "/horizontal/camera-1.jpeg", alt: "" },
+      { src: "/horizontal/camera-1-2.jpeg", alt: "" },
       { src: "/horizontal/camera-1-2.jpeg", alt: "" },
     ],
     services: [
