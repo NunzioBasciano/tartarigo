@@ -6,16 +6,26 @@ interface NavigationItemProps {
   label: string;
   color?: string;
   onclick?: () => void;
+  textSize?: string;
+  textWeight?: string;
 }
 
-function NavigationItem({ href, label, color, onclick }: NavigationItemProps) {
+function NavigationItem({
+  href,
+  label,
+  color,
+  textSize,
+  textWeight,
+  onclick,
+}: NavigationItemProps) {
   return (
     <Link
       target="_self"
       onClick={onclick}
       href={href}
-      className={`nav-link inline-block font-medium uppercase tracking-[0.15em] ${
-        color ? color : "text-secondary"
+      className={`inline-block uppercase ${textSize ? textSize : "text-xl"} 
+      ${textWeight ? textWeight : "font-light"} leading-11.25 ${
+        color ? color : "text-white"
       } hover:text-secondary transition-all duration-300 hover:scale-105`}
     >
       {label}

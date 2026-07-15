@@ -6,6 +6,7 @@ import NavigationItem from "./NavigationItem";
 import { NAV_LINKS } from "../constant/navigation";
 import Hamburger from "./hamburger-menu/hamburger";
 import HamburgerMenu from "./hamburger-menu/HamburgerMenu";
+import Button from "./Button";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,56 +32,69 @@ export default function Header() {
 
   return (
     <>
-      <div className="">
-        <header className="sticky top-0 w-full backdrop-blur-md bg-opacity-90 bg-primary border-b border-white/10 z-110">
-          <div className="container-custom flex items-center justify-between py-2 md:py-2.5">
+      <div className="sticky top-0 w-full backdrop-blur-md  bg-primary z-110">
+        <header>
+          <div className="container-custom flex items-center justify-between py-2.5 ">
             {/* LOGO */}
             <Link
               aria-label="Tarta Rigo - Torna alla Home"
               href="/"
-              className="flex items-center gap-2 md:gap-3 group transition-all"
+              className="flex items-center gap-3 group transition-all"
             >
-              <div className="bg-secondary rounded-full shadow-lg p-0.5 shrink-0 transition-transform group-hover:scale-105">
+              <div className="bg-white rounded-full shadow-lg p-0.5 shrink-0 transition-transform group-hover:scale-105">
                 <Image
                   src="/tartarigo-logo.svg"
                   alt="Logo Tarta Rigo"
                   width={72}
                   height={72}
-                  className="w-12 h-12 md:w-16 md:h-16"
+                  className="w-11 h-11 md:w-12 md:h-12 lg:w-14 lg:h-14"
                   priority
                 />
               </div>
               <div className="flex flex-col items-center" id="brand">
-                <h1 className="italic text-secondary leading-[0.85] tracking-tight text-[2rem]">
+                <h1 className="italic text-white leading-8 tracking-[4%] text-[1.75rem] font-bold  md:text-[1.75rem] md:leading-9 lg:text-[2rem] lg:leading-10">
                   <span className="brand-highlight">T</span>arta
                   <span className="brand-highlight">R</span>igo
                 </h1>
-                <div className="h-px bg-accent w-2/3 mt-1 mb-1.5 mx-auto"></div>
-                <p className="font-light uppercase tracking-[0.3em] text-secondary text-[0.5625rem] md:text-[0.6875rem]">
+                {/* <div className="h-px bg-accent w-2/3 mt-1 mb-1.5 mx-auto"></div> */}
+                <p className="font-normal uppercase tracking-[0.3em] text-white text-[0.625rem] leading-4 lg:text-[0.75rem] lg:leading-5">
                   B&B Bologna
                 </p>
               </div>
             </Link>
 
             {/* DESKTOP NAV */}
-            <nav aria-label="Navigazione desktop" className="hidden md:block">
-              <ul className="flex items-center gap-6 list-none text-secondary/70 text-[0.75rem] font-medium">
-                {NAV_LINKS.map((link, i) => (
-                  <li key={i}>
-                    <NavigationItem href={link.href} label={link.label} />
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            <div className="flex items-center gap-8">
+              <nav aria-label="Navigazione desktop" className="hidden lg:block">
+                <ul className="flex items-center gap-8 list-none text-secondary/70 text-[0.75rem] font-medium">
+                  {NAV_LINKS.map((link, i) => (
+                    <li key={i}>
+                      <NavigationItem
+                        href={link.href}
+                        label={link.label}
+                        textSize="text-[0.8rem]"
+                        textWeight="font-medium"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <Button
+                className="hidden! lg:inline-flex!" // Nascondi su mobile, mostra da Tablet (768px+)
+                href="#prenota"
+                label="Prenota Ora"
+                isLink={true}
+              />
+            </div>
 
             {/* CTA & HAMBURGER */}
-            <div className="flex items-center gap-4 md:gap-6">
-              <Link
+            <div className="flex items-center gap-4 md:gap-6 h-[-webkit-fill-available] lg:hidden ">
+              <Button
+                className="hidden! md:inline-flex!" // Mostra su mobile, NASCONDI da Tablet (768px+)
                 href="#prenota"
-                className="btn-cta whitespace-nowrap hidden md:inline-block"
-              >
-                Prenota Ora
-              </Link>
+                label="Prenota Ora"
+                isLink={true}
+              />
               <Hamburger
                 isOpen={isOpen}
                 toggleMenu={() => setIsOpen(!isOpen)}

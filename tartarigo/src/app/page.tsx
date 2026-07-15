@@ -2,13 +2,16 @@ import ContentBox from "./_components/ContentBox";
 import Slider from "./_components/Slider";
 import Image from "next/image";
 import { ROOMS } from "./constant/rooms";
+
+import HeroCarousel from "./_components/Slider2";
 export default function Home() {
   return (
     // Rimosso flex, items-center e justify-center per permettere lo scroll naturale
     <div className="relative w-full min-h-screen bg-black font-sans dark:bg-black">
       <main>
         {/* La Hero/Slider ora occupa il suo spazio naturale in cima */}
-        <Slider />
+        {/* <Slider /> */}
+        <HeroCarousel></HeroCarousel>
 
         {/* La sezione camere segue nel flusso */}
         <ContentBox

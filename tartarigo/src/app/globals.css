@@ -7,23 +7,26 @@
 
 @theme {
   /* Font */
-  --font-great-vibes: "Great Vibes", cursive; /* Nota: Great Vibes è un font script, non Poppins */
+  --font-great-vibes:
+    "Great Vibes", cursive; /* Nota: Great Vibes è un font script, non Poppins */
   --font-roboto: "Roboto", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 
   /* Colori: Questo permetterà di usare bg-primary, text-secondary, ecc. */
-  --color-primary: #6d4c41;
+  --color-primary: #302f2f;
   --color-secondary: #fff3dd;
-  --color-accent: #f5cb9e;
+  --color-accent: #bf9766;
   --color-cta: #e67e22;
 }
 /* -------------------------------------------------------------------------- */
 /* 1. DESIGN TOKENS & VARIABLES                                               */
 /* -------------------------------------------------------------------------- */
 :root {
-  --primary: #6d4c41;
+  /* --primary: #6d4c41; */
+  --primary: #302f2f;
   --secondary: #fff3dd;
-  --accent: #f5cb9e;
+  /* --accent: #f5cb9e; */
+  --accent: #bf9766;
   --cta: #e67e22;
   --bg-light: #fdfcfb;
   --text-main: #4a4a4a;
@@ -73,7 +76,7 @@ h2,
 h3 {
   font-family: var(--font-heading), sans-serif;
 
-  line-height: 1.2;
+  /* line-height: 1.2; */
   margin-bottom: calc(var(--space-unit) * 2);
   text-wrap: balance;
 }
@@ -98,56 +101,16 @@ h3 {
 .container-custom {
   max-width: 75rem;
   margin: 0 auto;
-  padding: 1.5rem; /* 24px */
+  padding: 10px 16px;
 }
 
-section {
+/* section {
   padding: var(--section-padding) 0;
-}
+} */
 
 /* -------------------------------------------------------------------------- */
 /* 5. UI ELEMENTS (Bottoni e Card)                                            */
 /* -------------------------------------------------------------------------- */
-
-/* Pulsante Primario: "Prenota Subito" [cite: 44, 57] */
-.btn-cta {
-  /* Usiamo l'accento per dare importanza senza urlare */
-  background-color: var(--accent);
-  color: var(--primary);
-
-  /* Riduciamo leggermente il padding per l'header */
-  padding: 0.5rem 1.25rem;
-  border-radius: 0.125rem; /* 2px */
-  font-size: 0.875rem;
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.btn-cta:hover {
-  background-color: var(--secondary);
-  transform: translateY(-0.0625rem);
-  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
-}
-
-/* Pulsante Secondario: "Dettagli e Prezzi" [cite: 25] */
-.btn-secondary {
-  background-color: transparent;
-  color: var(--primary);
-  border: 0.0625rem solid var(--primary); /* 1px */
-  padding: 0.625rem 1.25rem; /* 10px 20px */
-  font-size: 0.875rem; /* 14px */
-  font-weight: var(--fw-semibold);
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: var(--primary);
-  color: white;
-}
 
 /* Card Camere: Gestione 40mq/45mq [cite: 17, 22] */
 .room-card {
@@ -232,4 +195,36 @@ textarea:focus {
   .container-box h3 {
     font-size: 4rem;
   }
+}
+
+.my-custom-pagination {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important; /* Spazio tra i rettangolini */
+}
+
+/* Stile base dei rettangolini (inattivi) */
+.my-custom-pagination .swiper-pagination-bullet {
+  width: 20px !important;
+  height: 2px !important;
+  background-color: #f5cb9e !important;
+  border-radius: 0px !important; /* Rettangolari, non tondi */
+  opacity: 0.4; /* Opacità per i non attivi */
+  margin: 0 !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Stile del rettangolino attivo */
+.my-custom-pagination .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background-color: #f5cb9e !important;
+  /* Se vuoi che quello attivo sia leggermente più lungo (es. 30px), 
+             altrimenti lascialo a 20px come gli altri */
+  width: 30px !important;
+}
+
+/* Rimuoviamo eventuali stili di default di Swiper che potrebbero interferire */
+.swiper-pagination-bullet::before {
+  display: none !important;
 }
