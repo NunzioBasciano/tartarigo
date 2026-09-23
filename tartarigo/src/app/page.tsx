@@ -188,8 +188,6 @@ export default function Home() {
             </form>
           </div>
         </ContentBox>
-
-        <p className="pb-50"></p>
       </main>
     </div>
   );
