@@ -33,7 +33,7 @@ function HamburgerMenu({ isOpen, onClose, headerHeight }: HamburgerMenuProps) {
     >
       <div className="w-screen h-full overflow-y-auto overflow-x-hidden text-center flex flex-col">
         <nav aria-label="Navigazione mobile" className="pt-12 pb-12">
-          <ul className="flex flex-col list-none gap-7.5">
+          <ul className="flex flex-col list-none gap-6">
             {/* ... i tuoi map dei NAV_LINKS ... */}
             {NAV_LINKS.map((link, i) => (
               <li
@@ -44,6 +44,7 @@ function HamburgerMenu({ isOpen, onClose, headerHeight }: HamburgerMenuProps) {
                   onclick={onClose}
                   href={link.href}
                   label={link.label}
+                  textWeight="500"
                 />
               </li>
             ))}

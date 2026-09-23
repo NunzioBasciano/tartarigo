@@ -23,8 +23,8 @@ function NavigationItem({
       target="_self"
       onClick={onclick}
       href={href}
-      className={`inline-block uppercase ${textSize ? textSize : "text-xl"} 
-      ${textWeight ? textWeight : "font-light"} leading-11.25 ${
+      className={`inline-block  ${textSize ? textSize : "text-xl"} 
+      ${textWeight ? textWeight : "font-light"} leading-5 ${
         color ? color : "text-white"
       } hover:text-secondary transition-all duration-300 hover:scale-105`}
     >

@@ -66,13 +66,13 @@ export default function Header() {
             {/* DESKTOP NAV */}
             <div className="flex items-center gap-8">
               <nav aria-label="Navigazione desktop" className="hidden lg:block">
-                <ul className="flex items-center gap-8 list-none text-secondary/70 text-[0.75rem] font-medium">
+                <ul className="flex items-center gap-6 list-none text-secondary/70 text-[0.75rem] font-medium">
                   {NAV_LINKS.map((link, i) => (
                     <li key={i}>
                       <NavigationItem
                         href={link.href}
                         label={link.label}
-                        textSize="text-[0.8rem]"
+                        textSize="text-[16px]"
                         textWeight="font-medium"
                       />
                     </li>
