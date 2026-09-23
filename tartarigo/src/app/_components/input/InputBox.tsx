@@ -12,15 +12,13 @@ function InputBox(props: IInputBox) {
   const { placeholder, onChange, value, inputType, inputName } = props;
 
   return (
-    <>
-      <Input
-        name={inputName}
-        type={inputType}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-      />
-    </>
+    <Input
+      name={inputName}
+      type={inputType}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+    />
   );
 }
 

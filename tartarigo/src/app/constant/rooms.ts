@@ -1,5 +1,6 @@
 export const ROOMS = [
   {
+    index: 0,
     name: "Camera 1",
     images: [
       { src: "/horizontal/camera-1.jpeg", alt: "" },
@@ -17,6 +18,7 @@ export const ROOMS = [
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum similique molestias veniam non nobis voluptatibus quasi autem magnam magni voluptate eveniet aut explicabo porro, praesentium laborum eum, laboriosam debitis! Nobis.",
   },
   {
+    index: 1,
     name: "Camera 2",
     images: [
       { src: "/horizontal/camera-1.jpeg", alt: "" },
@@ -34,6 +36,7 @@ export const ROOMS = [
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum similique molestias veniam non nobis voluptatibus quasi autem magnam magni voluptate eveniet aut explicabo porro, praesentium laborum eum, laboriosam debitis! Nobis.",
   },
   {
+    index: 2,
     name: "Camera 2",
     images: [
       { src: "/horizontal/camera-1.jpeg", alt: "" },

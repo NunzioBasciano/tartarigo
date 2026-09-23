@@ -8,9 +8,6 @@ function CardRec({}: CardRecProps) {
         <p className="uppercase text-text-accent font-semi-bold text-[18px] leading-none tracking-[0.24em] text-center mb-2">
           our customer review
         </p>
-        {/*      <h3 className="font-forum font-normal text-[35px] leading-[1.26] tracking-normal text-center">
-          What Our Client Says
-        </h3> */}
       </div>
 
       <div className="flex flex-col items-end" aria-describedby="4 stelle su 5">
@@ -29,7 +26,7 @@ function CardRec({}: CardRecProps) {
 
         <div className="gap-4 mt-8 flex items-center justify-baseline">
           <div className="flex flex-col items-end gap-1">
-            <cite className="not-italic font-forum font-normal text-[18px] leading-5 text-[#bf9766]">
+            <cite className="not-italic font-forum font-normal text-[18px] leading-5 text-accent">
               Jackson Dean
             </cite>
             <span className="font-light text-[13px] leading-5">Guest</span>
@@ -40,111 +37,3 @@ function CardRec({}: CardRecProps) {
   );
 }
 export default CardRec;
-/* 
- .sezione-sfondo-chiaro {
-        text-align: center;
-        padding: 48px 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-      .pallino {
-        width: 24px;
-        height: 24px;
-        background-color: brown;
-        border-radius: 100%;
-      }
-      .up {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-      }
-      .line {
-        height: 105px;
-        width: 1px;
-        background-color: #bf9766;
-      }
-
-      .pre-title {
-        font-family: "Poppins";
-        font-weight: 300;
-        font-style: Light;
-        font-size: 18px;
-        line-height: 100%;
-        letter-spacing: 24%;
-        text-align: center;
-        text-transform: uppercase;
-        color: #bf9766;
-      }
-      .up h3 {
-        font-family: "Forum";
-        font-weight: 400;
-        font-style: Regular;
-        font-size: 35px;
-
-        line-height: 126%;
-        letter-spacing: 0%;
-        text-align: center;
-      }
-      .down {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 16px;
-      }
-      .container-stars {
-        display: flex;
-        gap: 4px;
-      }
-
-      .container-stars img {
-        width: 16px;
-        height: 16px;
-      }
-      .user-cite {
-        font-family: "Poppins";
-        font-weight: 300;
-        font-style: Light;
-        font-size: 13px;
-        line-height: 100%;
-        letter-spacing: 0%;
-        text-align: center;
-      }
-      .container-user {
-        display: flex;
-        gap: 4px;
-        margin-top: 44px;
-      }
-      .container-user img {
-        width: 48px;
-        height: 48px;
-        border: 3px solid #bf9766;
-        border-radius: 100%;
-        object-fit: cover;
-      }
-      cite {
-        font-family: "Forum";
-        font-weight: 400;
-        font-style: Regular;
-        font-size: 18px;
-        line-height: 20px;
-        letter-spacing: 0%;
-        color: #bf9766;
-        font-style: normal;
-      }
-      .container-user span {
-        font-family: "Poppins";
-        font-weight: 300;
-        font-style: Light;
-        font-size: 13px;
-        line-height: 20px;
-        letter-spacing: 0%;
-      }
-      .container-name {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-        gap: 4px;
-      } */

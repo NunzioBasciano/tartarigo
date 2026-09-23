@@ -13,7 +13,7 @@ function Input(props: IInputProps) {
     <input
       onChange={onChange}
       value={value}
-      className="bg-[var(--darkBlue)] py-1 px-3 w-full border border-1 rounded-md text-white"
+      className="bg-white py-1 px-3 w-full border border-1 rounded-md text-white"
       type={type}
       placeholder={placeholder}
       name={name}
