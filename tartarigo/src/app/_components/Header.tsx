@@ -34,10 +34,9 @@ export default function Header() {
   }, [isOpen]);
   return (
     <>
-      <div className="sticky top-0 w-full backdrop-blur-md  bg-primary z-110">
+      <div className="sticky top-0 w-full backdrop-blur-md  bg-primary z-110 ">
         <header>
           <div className="container-custom flex items-center justify-between py-2.5 ">
-            {/* LOGO */}
             <Link
               aria-label="Tarta Rigo - Torna alla Home"
               href="/"
@@ -58,14 +57,13 @@ export default function Header() {
                   <span className="brand-highlight">T</span>arta
                   <span className="brand-highlight">R</span>igo
                 </h1>
-                {/* <div className="h-px bg-accent w-2/3 mt-1 mb-1.5 mx-auto"></div> */}
+
                 <p className="font-normal uppercase tracking-[0.3em] text-white text-[0.625rem] leading-4 lg:text-[0.75rem] lg:leading-5">
                   B&B Bologna
                 </p>
               </div>
             </Link>
 
-            {/* DESKTOP NAV */}
             <div className="flex items-center gap-8">
               <nav aria-label="Navigazione desktop" className="hidden lg:block">
                 <ul className="flex items-center gap-6 list-none text-secondary/70 text-[0.75rem] font-medium">
@@ -82,17 +80,16 @@ export default function Header() {
                 </ul>
               </nav>
               <Button
-                className="hidden! lg:inline-flex!" // Nascondi su mobile, mostra da Tablet (768px+)
+                className="hidden! lg:inline-flex!"
                 href="#prenota"
                 label="Prenota Ora"
                 isLink={true}
               />
             </div>
 
-            {/* CTA & HAMBURGER */}
-            <div className="flex items-center gap-4 md:gap-6 h-[-webkit-fill-available] lg:hidden ">
+            <div className="flex items-center gap-4 md:gap-6  lg:hidden ">
               <Button
-                className="hidden! md:inline-flex!" // Mostra su mobile, NASCONDI da Tablet (768px+)
+                className="hidden! md:inline-flex!"
                 href="#prenota"
                 label="Prenota Ora"
                 isLink={true}
@@ -104,8 +101,6 @@ export default function Header() {
             </div>
           </div>
         </header>
-
-        {/* MENU MOBILE (Sibling dell'header, non figlio) */}
       </div>
       <div className="relative">
         <HamburgerMenu
